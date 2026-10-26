@@ -20,7 +20,7 @@ Use a virtual environment so the pinned dependency does not change the host Pyth
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install 'pypgstac[migrations]==0.10.0'
+python -m pip install 'pypgstac[migrations]==0.10.0' 'psycopg[binary]==3.2.9'
 ```
 
 On Windows, activate the virtual environment with `.venv\\Scripts\\Activate.ps1` in PowerShell. The example script itself requires Bash and `psql`.
