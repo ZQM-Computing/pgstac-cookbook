@@ -27,10 +27,11 @@ On Windows, activate the virtual environment with `.venv\\Scripts\\Activate.ps1`
 
 ## Run
 
-Set a connection URL for the target database. Use shell quoting and a secret manager where appropriate; avoid putting credentials into committed files or shell history.
+Set the connection URL for the verification query and the standard PostgreSQL environment variables used by the legacy `pypgstac migrate` command. Use shell quoting and a secret manager where appropriate; avoid putting credentials into committed files or shell history.
 
 ```bash
 export DATABASE_URL='postgresql://postgres:local-only-password@localhost:5432/postgres'
+export PGHOST=localhost PGPORT=5432 PGUSER=postgres PGDATABASE=postgres PGPASSWORD='local-only-password'
 export PGSTAC_VERSION=0.10.0
 bash examples/01-install/install-and-verify.sh
 ```
