@@ -15,7 +15,7 @@ A **pgSTAC cookbook** for running a STAC catalog inside PostGIS and serving it w
 
 ## Repository role and status
 
-**Status:** Active, public — first executable install pattern implemented. CI is configured to migrate a disposable PostGIS database to pgSTAC 0.10.0 and verify core schema objects; the live integration result is established by the workflow run, not by documentation alone.
+**Status:** Active, public — first executable install pattern implemented. CI targets pgSTAC 0.9.11 using the matching published migration tool and verifies core schema objects; the live integration result is established by the workflow run, not by documentation alone.
 
 **What this repository is:** pgSTAC patterns — catalog installation, collection/item ingest, search, and stac-fastapi deployment.
 
@@ -39,7 +39,7 @@ Geospatial data engineers and platform builders who run a STAC API against their
 
 | # | Example | Status | What it demonstrates |
 |---|---------|--------|----------------------|
-| 01 | [01-install](examples/01-install/README.md) | Implemented | Apply pgSTAC 0.10.0 migrations to a target database and verify the schema, core collections/items tables, and function presence. |
+| 01 | [01-install](examples/01-install/README.md) | Implemented | Apply pgSTAC 0.9.11 migrations to a target database and verify the schema, core collections/items tables, and function presence. |
 | 02 | `02-ingest` | Planned | Ingesting collections and items, including bulk ingest patterns |
 | 03 | `03-search` | Planned | STAC search: bbox, datetime, and query filters against the API |
 | 04 | `04-fastapi-deploy` | Planned | Deploying stac-fastapi.pgstac as a service, with settings and docs endpoints |
