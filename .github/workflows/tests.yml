@@ -27,6 +27,11 @@ jobs:
           --health-retries 10
     env:
       DATABASE_URL: postgresql://postgres:test-only-password@localhost:5432/pgstac_test
+      PGHOST: 127.0.0.1
+      PGPORT: "5432"
+      PGUSER: postgres
+      PGPASSWORD: test-only-password
+      PGDATABASE: pgstac_test
       PGSTAC_VERSION: "0.10.0"
     steps:
       - uses: actions/checkout@v4
