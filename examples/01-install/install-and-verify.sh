@@ -3,12 +3,12 @@ set -Eeuo pipefail
 
 # Install pgSTAC into a disposable or explicitly selected database, then verify
 # the resulting schema. The database account must have the privileges required
-# by pgstac-migrate (including extension and role creation on a fresh database).
+# by pypgstac (including extension and role creation on a fresh database).
 : "${DATABASE_URL:?Set DATABASE_URL to the target PostgreSQL database}"
-PGSTAC_VERSION="${PGSTAC_VERSION:-0.9.11}"
+PGSTAC_VERSION="${PGSTAC_VERSION:-0.10.0}"
 
-if ! command -v pgstac-migrate >/dev/null 2>&1; then
-  printf '%s\n' "ERROR: pgstac-migrate is not installed. See the example README." >&2
+if ! command -v pypgstac >/dev/null 2>&1; then
+  printf '%s\n' "ERROR: pypgstac is not installed. See the example README." >&2
   exit 127
 fi
 if ! command -v psql >/dev/null 2>&1; then
@@ -21,7 +21,7 @@ case "$PGSTAC_VERSION" in
 esac
 
 printf 'Migrating database to pgSTAC %s...\n' "$PGSTAC_VERSION"
-pgstac-migrate migrate --dsn "$DATABASE_URL" --to "$PGSTAC_VERSION"
+pypgstac migrate --toversion "$PGSTAC_VERSION"
 
 printf 'Verifying pgSTAC schema and core objects...\n'
 psql "$DATABASE_URL" -X -v ON_ERROR_STOP=1 <<'SQL'
