@@ -5,7 +5,7 @@ set -Eeuo pipefail
 # the resulting schema. The database account must have the privileges required
 # by pgstac-migrate (including extension and role creation on a fresh database).
 : "${DATABASE_URL:?Set DATABASE_URL to the target PostgreSQL database}"
-PGSTAC_VERSION="${PGSTAC_VERSION:-0.10.0}"
+PGSTAC_VERSION="${PGSTAC_VERSION:-0.9.11}"
 
 if ! command -v pgstac-migrate >/dev/null 2>&1; then
   printf '%s\n' "ERROR: pgstac-migrate is not installed. See the example README." >&2
