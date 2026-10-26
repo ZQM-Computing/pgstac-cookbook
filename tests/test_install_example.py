@@ -10,7 +10,7 @@ class InstallExampleTests(unittest.TestCase):
     def test_script_is_fail_fast_and_pins_default_version(self):
         script = SCRIPT.read_text(encoding="utf-8")
         self.assertIn("set -Eeuo pipefail", script)
-        self.assertIn('PGSTAC_VERSION="${PGSTAC_VERSION:-0.10.0}"', script)
+        self.assertIn('PGSTAC_VERSION="${PGSTAC_VERSION:-0.9.11}"', script)
         self.assertIn('pgstac-migrate migrate --dsn "$DATABASE_URL" --to "$PGSTAC_VERSION"', script)
 
     def test_script_verifies_schema_and_core_tables(self):
