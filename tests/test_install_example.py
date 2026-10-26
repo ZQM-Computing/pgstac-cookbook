@@ -11,7 +11,7 @@ class InstallExampleTests(unittest.TestCase):
         script = SCRIPT.read_text(encoding="utf-8")
         self.assertIn("set -Eeuo pipefail", script)
         self.assertIn('PGSTAC_VERSION="${PGSTAC_VERSION:-0.10.0}"', script)
-        self.assertIn('pypgstac migrate --toversion "$PGSTAC_VERSION"', script)
+        self.assertIn('psycopg-pool migrate --toversion "$PGSTAC_VERSION"', script)
 
     def test_script_verifies_schema_and_core_tables(self):
         script = SCRIPT.read_text(encoding="utf-8")
