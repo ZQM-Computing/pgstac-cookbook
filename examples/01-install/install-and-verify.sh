@@ -5,6 +5,9 @@ set -Eeuo pipefail
 # the resulting schema. The database account must have the privileges required
 # by pypgstac (including extension and role creation on a fresh database).
 : "${DATABASE_URL:?Set DATABASE_URL to the target PostgreSQL database}"
+: "${PGHOST:?Set PGHOST for the pypgstac migration command}"
+: "${PGDATABASE:?Set PGDATABASE for the pypgstac migration command}"
+: "${PGUSER:?Set PGUSER for the pypgstac migration command}"
 PGSTAC_VERSION="${PGSTAC_VERSION:-0.10.0}"
 
 if ! command -v pypgstac >/dev/null 2>&1; then
