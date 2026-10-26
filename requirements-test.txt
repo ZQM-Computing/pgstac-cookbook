@@ -1,0 +1,1 @@
+# Static example contract tests use Python's standard library only.
