@@ -40,11 +40,11 @@ Geospatial data engineers and platform builders who run a STAC API against their
 | # | Example | Status | What it demonstrates |
 |---|---------|--------|----------------------|
 | 01 | [01-install](examples/01-install/README.md) | Implemented | Apply pgSTAC 0.10.0 migrations to a target database and verify the schema, core collections/items tables, and function presence. |
-| 02 | `02-ingest` | Planned | Ingesting collections and items, including bulk ingest patterns |
-| 03 | `03-search` | Planned | STAC search: bbox, datetime, and query filters against the API |
-| 04 | `04-fastapi-deploy` | Planned | Deploying stac-fastapi.pgstac as a service, with settings and docs endpoints |
-| 05 | `05-titiler-pairing` | Planned | Pairing the catalog with TiTiler tile and statistics endpoints (see titiler-cookbook) |
-| 06 | `06-full-workflow` | Planned | End-to-end: install → ingest → search → serve |
+| 02 | [02-ingest](examples/02-ingest/README.md) | Written — design-only, gate 1 target | Ingesting collections and items, including bulk ingest patterns |
+| 03 | [03-search](examples/03-search/README.md) | Written — design-only, gate 1 target | STAC search: bbox, datetime, and query filters against the API |
+| 04 | [04-fastapi-deploy](examples/04-fastapi-deploy/README.md) | Written — design-only, gate 1 target | Deploying stac-fastapi.pgstac as a service, with settings and docs endpoints |
+| 05 | [05-titiler-pairing](examples/05-titiler-pairing/README.md) | Written — design-only, gate 1 target | Pairing the catalog with TiTiler tile and statistics endpoints (see titiler-cookbook) |
+| 06 | [06-full-workflow](examples/06-full-workflow/README.md) | Written — design-only, gate 1 target | End-to-end: install → ingest → search → serve |
 
 ## Repository layout
 
