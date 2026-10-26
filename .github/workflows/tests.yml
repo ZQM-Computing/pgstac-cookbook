@@ -27,14 +27,14 @@ jobs:
           --health-retries 10
     env:
       DATABASE_URL: postgresql://postgres:test-only-password@localhost:5432/pgstac_test
-      PGSTAC_VERSION: "0.9.11"
+      PGSTAC_VERSION: "0.10.0"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install pinned migration tool
-        run: python -m pip install 'pgstac-migrate==0.9.11'
+      - name: Install pinned pgSTAC migration package
+        run: python -m pip install 'pypgstac[migrations]==0.10.0'
       - name: Compile tests
         run: python -m compileall -q tests
       - name: Run cookbook contract tests
