@@ -6,7 +6,7 @@ This example applies a pinned pgSTAC migration target to a PostgreSQL database a
 
 - PostgreSQL 13 or newer
 - PostGIS 3 or newer and support for required extensions (the migration installs what it can; the database host must provide the extension packages)
-- Python 3.11+ and `pgstac-migrate==0.9.11`
+- Python 3.11+ and `pypgstac[migrations]==0.10.0`
 - PostgreSQL client tools (`psql`)
 - A database URL and a database role with privileges required to install extensions, roles, and pgSTAC objects on a fresh database
 
@@ -20,7 +20,7 @@ Use a virtual environment so the pinned dependency does not change the host Pyth
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install 'pgstac-migrate==0.9.11'
+python -m pip install 'pypgstac[migrations]==0.10.0'
 ```
 
 On Windows, activate the virtual environment with `.venv\\Scripts\\Activate.ps1` in PowerShell. The example script itself requires Bash and `psql`.
@@ -31,11 +31,11 @@ Set a connection URL for the target database. Use shell quoting and a secret man
 
 ```bash
 export DATABASE_URL='postgresql://postgres:local-only-password@localhost:5432/postgres'
-export PGSTAC_VERSION=0.9.11
+export PGSTAC_VERSION=0.10.0
 bash examples/01-install/install-and-verify.sh
 ```
 
-The migration command applies the requested version using `pgstac-migrate`. The follow-up SQL check fails if the `pgstac` schema, `collections`, `items`, or database functions are missing. It reports structural presence only.
+The migration command applies the requested version using `pypgstac`. The follow-up SQL check fails if the `pgstac` schema, `collections`, `items`, or database functions are missing. It reports structural presence only.
 
 ## What this does not prove
 
