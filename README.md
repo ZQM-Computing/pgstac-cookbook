@@ -11,7 +11,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A **pgSTAC cookbook** for running a STAC catalog inside PostGIS and serving it with stac-fastapi. Patterns are drawn from the ZQM fleet's running pgSTAC 0.10.0 installs (migration-SQL install, 26 tables and 186 functions) and stac-fastapi.pgstac 7.1.0 APIs (verified `/collections` and `/openapi.json` on Node-1 and Node-3). It is intended for geospatial data engineers who catalog imagery and need a queryable API over it; validate each pattern against your own data, software versions, and operating environment before adopting it.
+A **pgSTAC cookbook** for running a STAC catalog inside PostGIS and serving it with stac-fastapi. Patterns are drawn from the ZQM fleet's running pgSTAC 0.10.0 installs (migration-SQL install, 26 tables and 186 functions) and stac-fastapi.pgstac 7.1.0 APIs (verified `/collections` and `/openapi.json` on Node-1 and Node-3) (as of Oct 2026; verify against the current fleet). It is intended for geospatial data engineers who catalog imagery and need a queryable API over it; validate each pattern against your own data, software versions, and operating environment before adopting it.
 
 ## Repository role and status
 
