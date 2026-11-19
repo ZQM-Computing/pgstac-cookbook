@@ -11,6 +11,7 @@ permissions:
 jobs:
   install-and-verify:
     runs-on: [self-hosted, Linux, X64, zqm-linux]
+    timeout-minutes: 30
     services:
       postgres:
         image: postgis/postgis:16-3.5
